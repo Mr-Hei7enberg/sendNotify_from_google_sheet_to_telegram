@@ -12,11 +12,9 @@ function sendStat(){
     
     if (newValues[i] != '') { // если массив не пустой
       if (oldValues[i] == ''){ // если массив старых значений пустой присваиваем баланс = 0
-        //let name = sheet.getRange(i+2, 4).getValue(); // достаем имя из массива
         sheet.getRange(i+2, 5).setNote(newValues[i]); // присваиваем старые значения
         sendMessage(187051021, `${name} balance changed from: 0 → to ${newValues[i]} grn`); // отправляем в телеграм
       } else if (newValues[i] != oldValues[i]){ // если значения из старого и нового массива не совпадают
-        //let name = sheet.getRange(i+2, 4).getValue(); // достаем имя из массива
         sheet.getRange(i+2, 5).setNote(newValues[i]); // присваиваем старые значения
         sendMessage(187051021, `${name} balance changed from: ${oldValues[i]} → to ${newValues[i]} grn`); // отправляем в телеграм
         } 
