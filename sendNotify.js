@@ -23,7 +23,7 @@ function sendStat(){
       
      } 
     
-  } // end for
+  } // end for loop
   
 } //end sendStat
 
