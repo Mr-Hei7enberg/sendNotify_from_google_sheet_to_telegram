@@ -1,5 +1,5 @@
-const ss = SpreadsheetApp.openById('1Bgn5G7Xj_m6ZiNdsKqOQ4hjkCWzVaHlLVtpdjQuP4xs');
-const sheet = ss.getSheetByName('Log');
+const ss = SpreadsheetApp.openById('<table id>');
+const sheet = ss.getSheetByName('<sheet name>');
 
 
 function sendStat(){
@@ -20,13 +20,12 @@ function sendStat(){
         sheet.getRange(i+2, 5).setNote(newValues[i]); // присваиваем старые значения
         sendMessage(187051021, `${name} balance changed from: ${oldValues[i]} → to ${newValues[i]} grn`); // отправляем в телеграм
         } 
-    } 
+      
+     } 
     
   } // end for
   
 } //end sendStat
-
-
 
 function setTriggerTime() {
   ScriptApp.newTrigger("sendStat")
@@ -34,7 +33,6 @@ function setTriggerTime() {
   .everyMinutes(1)
   .create();
 }
-
 
 function deleteTrigger(){
   // Deletes all triggers in the current project.
